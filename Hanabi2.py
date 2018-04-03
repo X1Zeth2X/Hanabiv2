@@ -288,7 +288,6 @@ def main():
     else:
         fancydelay = 0
 
-
     ### First Startup Setup ###
     if conf["firststart"] == 'true':
         delay = 1
