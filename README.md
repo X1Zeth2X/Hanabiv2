@@ -15,18 +15,18 @@ Hanabi needs `python3+` to run and `PyYAML` for configuration file.
 To install PyYAML simple run on a terminal.
 * `pip3 install PyYAML` or `pip3 install PyYAML --user`
 * `URxvt` is set as the default terminal. 
-* This is mainly for `i3(WM/GAPS)` but I am planning to add support for other Linux Window Managers soon.
+* This is mainly for `i3(WM/GAPS)` but I am planning to add support for other Window Managers soon.
 
 ## Thanks
 I would like to thank and appreciate the following:
 * "Wednesday"
- - He gave me some ideas and code for Hanabi
+ He gave me some ideas and code for Hanabi
 * Python IRC
- - Helped me with my Pythone questions so I thank them for that.
+ Helped me with my Pythone questions so I thank them for that.
 * Users
- - Thanks for using Hanabi (v2)!
+ Thanks for using Hanabi (v2)!
 * and a bunch of other people and groups
- - Thank you.
+ Thank you.
 
 ## Donate
 Donating would help me speed up work on Hanabi and new features for it.
