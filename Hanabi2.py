@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
 
+
 """ Import Stuff """
 import os, sys
 import time
 import subprocess
 import yaml
 
+
+
 ## Colors Definitions ##
 BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[0m'
 
-config = 'conf.yml'
+config= 'conf.yml'
+
+
+
 
 ####
 def heading():
@@ -185,7 +191,12 @@ def menu():
 #######
 
 
-#######
+
+
+
+
+
+######
 def Settings():
     os.system("clear")
     heading()
@@ -260,27 +271,38 @@ def Settings():
             print("\t{}Please choose a valid option{}".format(RED, WHITE))
             time.sleep(2)
             Settings()
- 
-####
-conf = loadConfig()
-if conf["fancydelay"] == "on":
-    fancydelay = 0.2
-else:
-    fancydelay = 0
-####
 
+
+
+
+
+            
 ###  Main Process ###
 ###  Starts here  ###
+def main():
+    
+    # Load Config
+    conf = loadConfig()
+    if conf["fancydelay"] == "on":
+        fancydelay = 0.2
+    else:
+        fancydelay = 0
 
-### First Startup Setup ###
-if conf["firststart"] == 'true':
-    delay = 1
-    heading()
-    firstStart()
-    ###  Quick Setup  ###
-    Settings()
-   ### ##### ##### ###
+    ### First Startup Setup ###
+    if conf["firststart"] == 'true':
+        delay = 1
+        heading()
+        firstStart()
+        ###  Quick Setup  ###
+        Settings()
+        
+        
+    elif conf["firststart"] == 'false':
+        delay = 0
+        menu()
 
-elif conf["firststart"] == 'false':
-    delay = 0
-    menu()
+
+        
+# Entry Point
+if __name__ == "__main__":
+    main()
