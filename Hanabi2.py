@@ -9,7 +9,7 @@ import yaml
 ## Colors Definitions ##
 BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[0m'
 
-config = 'conf.yaml'
+config = 'conf.yml'
 
 ####
 def heading():
@@ -197,8 +197,8 @@ def Settings():
     print("\t{}Hanabi:{} Choose what you want to setup.\n".format(RED, WHITE))
     time.sleep(delay)
     print("\t{}[1]{} Set Terminal, current ({})".format(YELLOW, WHITE, conf["terminal"]))
-    print("\t{}[2]{} Fancy delays".format(YELLOW, WHITE))
-    print("\t{}[Menu]{} Return to menu.\n".format(YELLOW, WHITE))
+    print("\t{}[2]{} Fancy delays\n".format(YELLOW, WHITE))
+    print("\t{}[Menu]{} Return to menu.".format(YELLOW, WHITE))
     print("\t{}[Quit]{} Quit Hanabi.\n".format(YELLOW, WHITE))
     while True:
         decide = str(input("\tHanabi > "))
