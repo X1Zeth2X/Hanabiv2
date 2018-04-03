@@ -1,0 +1,27 @@
+## Specify AppImage here ##
+'appimage':
+  'A':
+    'location': '/home/x1zeth2x/Downloads/'
+    'name': 'Franz'
+    'workspace': '7'
+##   Specify Apps here   ##
+'apps':
+  '1':
+    'command': 'ncmpcpp'
+    'name': 'Ncmpcpp'
+    'type': 'cli'
+    'workspace': '4'
+  '2':
+    'command': 'qutebrowser --no-err-window'
+    'name': 'Qutebrowser'
+    'type': 'gui'
+    'workspace': '2'
+## Fancy delay [on] by default ##
+'fancydelay': 'on'
+## First start ##
+'firststart': 'true'
+## Where you choose to start Hanabi on i3 startup ##
+'hanabi':
+  'mainworkspace': '1'
+## Terminal, set to URxvt by default ##
+'terminal': 'urxvt -e'
