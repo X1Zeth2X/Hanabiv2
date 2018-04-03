@@ -17,6 +17,10 @@ To install PyYAML simple run on a terminal.
 * `URxvt` is set as the default terminal. 
 * This is mainly for `i3(WM/GAPS)` but I am planning to add support for other Window Managers soon.
 
+## Guide / Wiki
+
+![alt text](https://github.com/X1Zeth2X/Hanabiv2/wiki "HanabiWiki")
+
 ## Thanks
 I would like to thank and appreciate the following:
 * "Wednesday"
