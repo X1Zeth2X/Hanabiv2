@@ -19,7 +19,7 @@ To install PyYAML simple run on a terminal.
 
 ## Guide / Wiki
 
-![alt text](https://github.com/X1Zeth2X/Hanabiv2/wiki "HanabiWiki")
+[Click here to read the guide and wiki.](https://github.com/X1Zeth2X/Hanabiv2/wiki/Guide-and-Wiki "Guide & Wiki")
 
 ## Thanks
 I would like to thank and appreciate the following:
