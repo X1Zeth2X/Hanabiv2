@@ -28,10 +28,10 @@ I would like to thank and appreciate the following:
   He gave me some ideas and code for Hanabi
 * Users
 
- Thanks for using Hanabi (v2)!
+  Thanks for using Hanabi (v2)!
 * and a bunch of other people and groups
 
- Thank you.
+  Thank you.
 
 ## Donate
 Donating would help me speed up work on Hanabi and new features for it.
