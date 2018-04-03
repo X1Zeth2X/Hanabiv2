@@ -23,9 +23,9 @@ To install PyYAML simple run on a terminal.
 
 ## Thanks
 I would like to thank and appreciate the following:
-* "Wednesday"
+* "Wednesday" and João.
 
-  He gave me some ideas and code for Hanabi
+  They gave me some ideas and code for Hanabi
 * Users
 
   Thanks for using Hanabi (v2)!
