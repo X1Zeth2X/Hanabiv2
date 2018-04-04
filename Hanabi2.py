@@ -126,7 +126,7 @@ def startApp():
 
 def List():
     while True:
-        time.sleep(0.2)
+        time.sleep(1)
         os.system("clear")
         heading()
         print('\n')
@@ -273,24 +273,27 @@ def Settings():
             Settings()
 
 
-
-
-
+### Seperated to prevent errors
+conf = loadConfig()
+### ###
+if conf["fancydelay"] == "on":
+    fancydelay = 0.2
+else:
+    fancydelay = 0
+### ###
+if conf["firststart"] == 'true':
+    delay = 1
+else:
+    delay = 0
+### ###
             
 ###  Main Process ###
 ###  Starts here  ###
 def main():
-    
     # Load Config
     conf = loadConfig()
-    if conf["fancydelay"] == "on":
-        fancydelay = 0.2
-    else:
-        fancydelay = 0
-
     ### First Startup Setup ###
     if conf["firststart"] == 'true':
-        delay = 1
         heading()
         firstStart()
         ###  Quick Setup  ###
@@ -298,7 +301,6 @@ def main():
         
         
     elif conf["firststart"] == 'false':
-        delay = 0
         menu()
 
 
