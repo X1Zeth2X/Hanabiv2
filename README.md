@@ -1,7 +1,7 @@
 HANABI (v2)
 =========
 
-Hanabi is a simple CLI application starter written in Python 3. Hanabi starts your _CLI/GUI/AppImage_ application on specific workspaces in i3**(wm/gaps)**.
+Hanabi is a simple CLI application starter written in Python 3. Hanabi starts your _CLI/GUI/AppImage_ application on specific workspaces in i3 **(wm/gaps)**.
 It it meant to be started on i3 startup and then you can easily start your apps from Hanabi instead of starting everything at once and starting unneeded applications. You can also create an alias or function on your preferred shell to run Hanabi or you can choose to create a BASH script that i3 can use to start Hanabi on preferred workspace.
 
 ![alt text](https://github.com/X1Zeth2X/Hanabiv2/blob/master/media/Hanabiv2.gif "HanabiGif")
