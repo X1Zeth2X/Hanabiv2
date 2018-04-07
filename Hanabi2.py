@@ -5,6 +5,7 @@
 import os, sys
 import time
 import subprocess
+from subprocess import call
 import yaml
 
 
@@ -47,6 +48,8 @@ def tildes():
 
 def equals():
     print("\t==============")
+def hanabiSay(text):
+    print("\t{}Hanabi:{}".format(RED,WHITE),text)
 ####
 
 ####
@@ -62,9 +65,9 @@ def quitHanabi():
 def firstStart():
     print("\n\tHi I'm {}Hanabi{} A simple CLI assistant".format(RED,WHITE))
     time.sleep(2)
-    print("\t{}Hanabi:{} This seems to be your first run".format(RED, WHITE))
+    hanabiSay("This seems to be your first run")
     time.sleep(2)
-    print("\t{}Hanabi:{} Let's do a quick setup! :D".format(RED, WHITE))
+    hanabiSay("Let's do a quick setup!")
     time.sleep(2)
 ####
 
@@ -113,8 +116,13 @@ def launch(choice):
         time.sleep(4)
         os.system(return_ws)
     ###     ###     ###     ###     ###     ###
-####
 
+####
+def menuAndQuit():
+    print("\n\t{}[{}Menu{}]{} to return to Main menu.".format(YELLOW, RED, YELLOW, WHITE))
+    time.sleep(fancydelay)
+    print("\t{}[{}Quit{}]{} to return to Main menu.\n".format(YELLOW, RED, YELLOW, WHITE))
+####
 def startApp():
     for app in sorted(conf["apps"]):
         """ [{}{app}{}] """
@@ -137,10 +145,8 @@ def List():
         time.sleep(fancydelay)
         print("\t{}[{}AIM{}]{} To start a custom AppImage application".format(YELLOW, BLUE, YELLOW, WHITE))
         time.sleep(fancydelay)
-        print("\n\t{}[{}Menu{}]{} to return to Main menu.".format(YELLOW, RED, YELLOW, WHITE))
-        time.sleep(fancydelay)
-        print("\t{}[{}Quit{}]{} to quit Hanabi.\n".format(YELLOW, RED, YELLOW, WHITE))
-        choice = input("\tHanabi > ")
+        menuAndQuit()
+        choice = str(input("\t{}Hanabi{} > ".format(RED,WHITE)))
         if choice == "Menu":
             menu()
             break
@@ -166,35 +172,69 @@ def menu():
     time.sleep(fancydelay)
     print("\n\t{}Options:\n\t========".format(GREEN))
     time.sleep(fancydelay)
-    print("\t{}[{}List{}]{} List applications to start".format(YELLOW, RED, YELLOW, WHITE))
+    print("\t{}[{}List{}]{}   List applications to start".format(YELLOW, RED, YELLOW, WHITE))
     time.sleep(fancydelay)
-    print("\t{}[{}Quit{}]{} Quit Hanabi".format(YELLOW, RED, YELLOW, WHITE))
+    print("\t{}[{}Help{}]{}   Guide and help on how to use the application".format(YELLOW, RED, YELLOW, WHITE))
     time.sleep(fancydelay)
-#    Adding soon.
-#    print("\t{}[{}Help{}]{} Guide and help on how to use the application".format(YELLOW, RED, YELLOW, WHITE))
-#    time.sleep(fancydelay)
-    print("\t{}[{}Settings{}]{} Change settings for Hanabi\n".format(YELLOW, RED, YELLOW, WHITE))
+    print("\t{}[{}HSet{}]{}   Change settings for Hanabi".format(YELLOW, RED, YELLOW, WHITE))
+    time.sleep(fancydelay)
+    print("\t{}[{}Quit{}]{}   Quit Hanabi\n".format(YELLOW, RED, YELLOW, WHITE))
     time.sleep(fancydelay)
     while True:
-        menu_choice = str(input("\tHanabi > "))
-        if menu_choice == "List":
+        decide = str(input("\t{}Hanabi{} > ".format(RED, WHITE)))
+        if decide == "List":
             List()
-        elif menu_choice == "Settings":
+        elif decide == "Help":
+            helpguide()
+        elif decide == "HSet":
             Settings()
-        elif menu_choice == "Quit":
+        elif decide == "Quit":
             quitHanabi()
         else:
             tildes()
-            print("Please choose a valid option!")
+            print("\tPlease choose a valid option!")
             time.sleep(1)
             menu()
 #######
 
-
-
-
-
-
+#######
+def helpguide():
+    os.system("clear")
+    heading()
+    time.sleep(0.2)
+    print("\n\t=============== Help & Guide ===============")
+    time.sleep(fancydelay)
+    hanabiSay("Welcome to the help and guide area.")
+    time.sleep(fancydelay)
+    hanabiSay("What do you need help with?\n")
+    time.sleep(fancydelay)
+    print("\t{}[1]{} How do I add applications?\n".format(YELLOW, WHITE))
+    time.sleep(fancydelay)
+    print("\t{}[2]{} How do I ?\n".format(YELLOW, WHITE))
+    time.sleep(fancydelay)
+    menuAndQuit()
+    while True:
+        decide = str(input("\t{}Hanabi{} > ".format(RED, WHITE)))
+        if decide == "Menu":
+            menu()
+            break
+        elif decide == "Quit":
+            quitHanabi()
+        elif decide == "1":
+            subprocess.call("clear")
+            heading()
+            print("\n\t========= How do I add applications? =========\n")
+            time.sleep(1)
+            hanabiSay("It's easy! simply open the config file called\n\t'conf.yml' and add your applications and specify the things.\n")
+            time.sleep(2)
+            hanabiSay("Like... command to run the app, its name,\n\ttype ('cli' or 'gui'), and your desired workspace to spawn it.\n")
+            time.sleep(2)
+            hanabiSay("Oh! and don't forget to properly enumerate it.")
+            time.sleep(1)
+            print("\n\tPress {}[{}Enter{}]{} to continue.".format(YELLOW, BLUE, YELLOW, WHITE))
+            input("\t")
+            helpguide()
+######
 
 ######
 def Settings():
@@ -203,20 +243,19 @@ def Settings():
     time.sleep(0.2)
     print("\n\t================= Settings =================")
     time.sleep(delay)
-    print("\t{}Hanabi:{} Welcome to the settings area.".format(RED, WHITE))
+    hanabiSay("Welcome to the settings area.")
     time.sleep(delay)
-    print("\t{}Hanabi:{} Choose what you want to setup.\n".format(RED, WHITE))
+    hanabiSay("Please choose what you want to set.\n")
     time.sleep(delay)
-    print("\t{}[1]{} Set Terminal, current ({})".format(YELLOW, WHITE, conf["terminal"]))
+    print("\t{}[1]{} Set Terminal, currently set to ({})".format(YELLOW, WHITE, conf["terminal"]))
     print("\t{}[2]{} Fancy delays\n".format(YELLOW, WHITE))
-    print("\t{}[Menu]{} Return to menu.".format(YELLOW, WHITE))
-    print("\t{}[Quit]{} Quit Hanabi.\n".format(YELLOW, WHITE))
+    menuAndQuit()
     while True:
-        decide = str(input("\tHanabi > "))
+        decide = str(input("\t{}Hanabi{} > ".format(RED, WHITE)))
         if decide == "1":
-            terminal_choice = str(input("{}Terminal{} (Case Sensitive): ".format(YELLOW,WHITE)))
+            terminal_choice = str(input("\t{}Terminal{} (Case Sensitive): ".format(YELLOW,WHITE)))
             tildes()
-            print("Setting terminal, please wait.")
+            print("\tSetting terminal\n\tPlease wait.")
             equals()
             time.sleep(2)
             ####
@@ -226,6 +265,8 @@ def Settings():
                 yaml.dump(conf, f, default_style="'")
                 f.close()
             ####
+            Settings()
+            break
         elif decide == "2":
             fancy_delay = str(input("\tTurn fancy delays \"on\" or \"off\"?\n\t Delays > "))
             if fancy_delay == "on":
@@ -268,7 +309,7 @@ def Settings():
             menu()
             break
         else:
-            print("\t{}Please choose a valid option{}".format(RED, WHITE))
+            print("\t{}Please choose a valid option!{}".format(RED, WHITE))
             time.sleep(2)
             Settings()
 
@@ -299,11 +340,8 @@ def main():
         ###  Quick Setup  ###
         Settings()
         
-        
     elif conf["firststart"] == 'false':
         menu()
-
-
         
 # Entry Point
 if __name__ == "__main__":
