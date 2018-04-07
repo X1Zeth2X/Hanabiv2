@@ -29,7 +29,7 @@ def heading():
            ██  ██ ██  ██ ██   ██ ██  ██ █████  ██
 
   """ + END + BLUE +
- '\n' + '{}A Simple CLI Assistant! Made for i3(wm/gaps)({}HANABI{}){}'.format(YELLOW, RED, YELLOW, BLUE).center(80) +
+ '\n' + '{}A Simple CLI Assistant! Made for i3(wm/gaps){}'.format(YELLOW, RED, YELLOW, BLUE).center(70) +
  '\n' + 'Version:{}2{} \n'.format(YELLOW, END).center(68))
 ####
 
