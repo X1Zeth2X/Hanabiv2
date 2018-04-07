@@ -210,8 +210,6 @@ def helpguide():
     time.sleep(fancydelay)
     print("\t{}[1]{} How do I add applications?\n".format(YELLOW, WHITE))
     time.sleep(fancydelay)
-    print("\t{}[2]{} How do I ?\n".format(YELLOW, WHITE))
-    time.sleep(fancydelay)
     menuAndQuit()
     while True:
         decide = str(input("\t{}Hanabi{} > ".format(RED, WHITE)))
