@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-
-
 """ Import Stuff """
 import os, sys
 import time
@@ -8,15 +6,10 @@ import subprocess
 from subprocess import call
 import yaml
 
-
-
 ## Colors Definitions ##
 BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[0m'
 
-config= 'conf.yml'
-
-
-
+config = 'conf.yml'
 
 ####
 def heading():
@@ -45,7 +38,6 @@ def loadConfig():
 ####
 def tildes():
     print("\t~~~~~~~~~~~~~~")
-
 def equals():
     print("\t==============")
 def hanabiSay(text):
