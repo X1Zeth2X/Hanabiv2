@@ -8,6 +8,7 @@ def notify(mode):
 
 def done():
     alert('Hanabi ~> Completed!')
+    exit('Completed task.')
 
 if __name__ == '__main__':
     # Get arguments
@@ -16,7 +17,7 @@ if __name__ == '__main__':
         alert('Hanabi ~> No command passed, exiting!')
         exit(0)
 
-    if command == 'work':
+    elif command == 'work':
         notify(command)
         workMode()
         done()
@@ -25,3 +26,5 @@ if __name__ == '__main__':
         notify(command)
         musicMode()
         done()
+
+    alert('Hanabi ~> Mode not found!')
