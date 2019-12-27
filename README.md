@@ -19,15 +19,8 @@ $ python Hanabi.py <Mode>
 
 ## Thanks
 I would like to thank and appreciate the following:
-* "Wednesday" and João.
-
-  They gave me some ideas and code for Hanabi
-* Users
-
-  Thanks for using Hanabi (v2)!
-* and a bunch of other people and groups
-
-  Thank you.
+* "Wednesday" and João,
+  because they gave me some ideas and code for Hanabi
 
 ## Donate
 Donating would help me speed up work on Hanabi and new features for it.
